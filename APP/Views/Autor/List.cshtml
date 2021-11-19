@@ -1,0 +1,43 @@
+﻿@model IEnumerable<models.Autor>
+
+@{
+    ViewBag.Title = "Autores";
+}
+<h3 class="text-center text-info">Listado de autores</h3>
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Crear autor", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Fecha nacimiento</th>
+            <th>País origen</th>
+            <th>Acciones</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdAutor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreAutor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaisOrigen)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdAutor }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IdAutor }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+    

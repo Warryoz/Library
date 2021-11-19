@@ -1,0 +1,49 @@
+﻿@model models.ViewModels.LibroViewModel
+
+<h3>Crear nuevo libro</h3>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div class="form row">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="col-md-6 form-group">
+            <label>Nombre</label>
+                @Html.EditorFor(model => model.NombreLibro, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NombreLibro, "", new { @class = "text-danger" })
+        </div>
+     
+        <div class="col-md-6 form-group">
+            <label>Fecha lanzamiento</label>
+            @Html.EditorFor(model => model.FechaLanzamiento, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FechaLanzamiento, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 form-group">
+            <label>Cantidad paginas</label>
+                @Html.EditorFor(model => model.CantidadPaginas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CantidadPaginas, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 form-group">
+            <label>Editorial</label>
+
+            @Html.DropDownListFor(model => model.IdEditorial, ViewBag.Editorials as SelectList, "Seleccione una editorial", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IdEditorial, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 form-group">
+            <label>Autor</label>
+            @Html.DropDownListFor(model => model.IdAutor, ViewBag.Authors as SelectList, "Seleccione un Autor", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IdAutor, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 col-md-offset-6  col-md-offset-6 form-group">
+                <input type="submit" value="Crear nuevo libro" class="btn btn-success" />
+                @Html.ActionLink("Volver", "List", null, new { @class="btn btn-danger"})
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

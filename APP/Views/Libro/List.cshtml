@@ -1,0 +1,68 @@
+﻿@model IEnumerable<models.ViewModels.LibroViewModel>
+
+@{
+    ViewBag.Title = "Libros";
+}
+<h3 class="text-center text-info">Listado de libros</h3>
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Crear nuevo libro", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+               Fecha lanzamiento
+            </th>
+            <th>
+               Cantidad de páginas
+            </th>
+            <th>
+                Disponible
+            </th>
+            <th>
+               Editorial
+            </th>
+            <th>
+                Autor
+            </th>
+            <th>Acciones</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdLibro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreLibro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaLanzamiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CantidadPaginas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Disponible)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Editorial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autor)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new {  id=item.IdLibro  }, new { @class="btn btn-warning"}) 
+                    @Html.ActionLink("Eliminar", "Delete", new { id=item.IdLibro }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

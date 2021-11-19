@@ -1,0 +1,75 @@
+﻿@model IEnumerable<models.ViewModels.UsuarioViewModel>
+
+@{
+    ViewBag.Title = "Usuarios";
+}
+<h3 class="text-center text-info">Listado de usuarios</h3>
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Crear usuario", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Tipo identificación </th>
+                <th> Identificación </th>
+                <th> Email</th>
+                <th> Fecha nacimiento</th>
+                <th> Direccion </th>
+                <th>Telefono</th>
+                <th>Pais</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idUsuario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombres)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellidos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoIdentificacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumeroIdentificacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CorreoElectronico)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaisOrigen)
+                    </td>
+                    <td>
+                        <p>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.idUsuario }, new { @class = "btn btn-warning" })
+                        </p>
+                        <p>
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.idUsuario }, new { @class = "btn btn-danger" })
+                        </p>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

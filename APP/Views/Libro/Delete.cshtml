@@ -1,0 +1,70 @@
+﻿@model models.ViewModels.LibroViewModel
+
+<div class="row">
+    <div class=" col-md-offset-4 col-md-8">
+        <h3 class="text-danger">Zona de eliminación de libros</h3>
+        <h4>¿Esta seguro que desea eliminar este libro?</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+              Nombre
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NombreLibro)
+            </dd>
+
+            <dt>
+                Fecha lanzamiento
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FechaLanzamiento)
+            </dd>
+
+            <dt>
+                Cantidad paginas
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CantidadPaginas)
+            </dd>
+
+            <dt>
+                Disponible
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Disponible)
+            </dd>
+
+            <dt>
+                Editorial
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Editorial)
+            </dd>
+
+            <dt>
+               Autor
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Autor)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar permanentemente" class="btn btn-danger" />
+                @Html.ActionLink("Volver", "List", null, new { @class = "btn btn-success" })
+            </div>
+        }
+    </div>
+</div>
+

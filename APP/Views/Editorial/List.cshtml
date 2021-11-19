@@ -1,0 +1,37 @@
+﻿@model IEnumerable<models.Editorial>
+
+@{
+    ViewBag.Title = "Editoriales";
+}
+<h3 class="text-center text-info">Listado de editoriales</h3>
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Crear nueva editorial", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEditorial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreEditorial)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdEditorial }, new { @class="btn btn-warning" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IdEditorial }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+ 
+   

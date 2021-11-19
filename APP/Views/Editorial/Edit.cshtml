@@ -1,0 +1,28 @@
+﻿@model models.Editorial
+
+
+<h3>Editar nueva editorial</h3>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form row">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="col-md-6 form-group">
+            <label>Nombre</label>
+            @Html.EditorFor(model => model.NombreEditorial, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NombreEditorial, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-12 form-group">
+            <input type="submit" value="Actualizar" class="btn btn-success" />
+            @Html.ActionLink("Volver", "List", null, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

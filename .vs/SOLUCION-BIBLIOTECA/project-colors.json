@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6e905424-82c4-467a-aa66-7024c6778665": {
+      "ProjectGuid": "6e905424-82c4-467a-aa66-7024c6778665",
+      "DisplayName": "APP",
+      "ColorIndex": 0
+    },
+    "e6832025-66c0-45f3-aa5b-1005bcd545e9": {
+      "ProjectGuid": "e6832025-66c0-45f3-aa5b-1005bcd545e9",
+      "DisplayName": "MODEL",
+      "ColorIndex": 1
+    },
+    "cba7e1b1-1d20-44fa-8c79-9db0050dbc84": {
+      "ProjectGuid": "cba7e1b1-1d20-44fa-8c79-9db0050dbc84",
+      "DisplayName": "BLL",
+      "ColorIndex": 2
+    },
+    "8470a2f2-8618-458c-858f-5189da8d444a": {
+      "ProjectGuid": "8470a2f2-8618-458c-858f-5189da8d444a",
+      "DisplayName": "DAL",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

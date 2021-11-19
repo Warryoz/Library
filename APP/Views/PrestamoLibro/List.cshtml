@@ -1,0 +1,67 @@
+﻿@model IEnumerable<models.ViewModels.PrestamoLibroViewModel>
+
+@{
+    ViewBag.Title = "Prestamo de libros";
+}
+<h3 class="text-center text-info">Listado de prestamos de libros</h3>
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Rentar nuevo libro", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th># </th>
+            <th>
+                Libro
+            </th>
+            <th>
+                Usuario
+            </th>
+            <th>
+                Fecha prestamo
+            </th>
+            <th>
+                Fue devuelto
+            </th>
+            <th>
+                Observación entrega
+            </th>
+            <th>
+                Observación prestamo
+            </th>
+
+            <th>Acciones</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdPrestamoLibro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Libro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaPrestamo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FueDvuelto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObservacionEntrega)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObservacionPrestamo)
+        </td>
+
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.IdPrestamoLibro }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.IdPrestamoLibro }, new { @class = "btn btn-danger" })
+    </tr>
+        }
+    </table>
+</div>

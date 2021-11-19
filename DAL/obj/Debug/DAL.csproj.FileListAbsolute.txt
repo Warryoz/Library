@@ -1,0 +1,15 @@
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\bin\Debug\DAL.dll.config
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\bin\Debug\DAL.dll
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\bin\Debug\DAL.pdb
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\bin\Debug\EntityFramework.dll
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\bin\Debug\models.dll
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\bin\Debug\models.pdb
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\bin\Debug\models.dll.config
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\bin\Debug\EntityFramework.xml
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\obj\Debug\DAL.dll
+C:\Users\mimo0\source\repos\SOLUCION-BIBLIOTECA\DAL\obj\Debug\DAL.pdb

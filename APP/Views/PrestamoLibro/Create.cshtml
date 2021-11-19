@@ -1,0 +1,47 @@
+﻿@model models.PrestamoLibro
+
+@{
+    ViewBag.Title = "Rentar libro";
+}
+
+<h3>Rentar nuevo libro</h3>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form row">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="col-md-6 form-group">
+        <label>Fecha prestamo</label>
+        @Html.EditorFor(model => model.FechaPrestamo, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.FechaPrestamo, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-6 form-group">
+        <label>Observación prestamo</label>
+        @Html.EditorFor(model => model.ObservacionPrestamo, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ObservacionPrestamo, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-6 form-group">
+        <label>Libro</label>
+        @Html.DropDownListFor(model => model.IdLibro, ViewBag.BooksList as SelectList, "Seleccione un libro", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.IdLibro, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-6 form-group">
+        <label>Usuario</label>
+        @Html.DropDownListFor(model => model.IdUsuario, ViewBag.UsersList as SelectList, "Seleccione un usuario", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.IdUsuario, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-6 col-md-offset-6 form-group">
+        <input type="submit" value="Rentar nuevo libro" class="btn btn-success" />
+        @Html.ActionLink("Volver", "List", null, new { @class = "btn btn-danger" })
+    </div>
+</div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

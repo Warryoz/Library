@@ -1,0 +1,39 @@
+﻿@model models.Autor
+
+
+<h3>Crear nuevo autor</h3>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form row">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="col-md-6 form-group">
+            <label>Nombre</label>
+            @Html.EditorFor(model => model.NombreAutor, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NombreAutor, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 form-group">
+            <label>Fecha nacimiento</label>
+            @Html.EditorFor(model => model.FechaNacimiento, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FechaNacimiento, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 form-group">
+            <label>País origen</label>
+            @Html.EditorFor(model => model.PaisOrigen, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PaisOrigen, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 col-md-offset-6 col-md-offset-6  form-group">
+            <input type="submit" value="Crear nuevo autor" class="btn btn-success" />
+            @Html.ActionLink("Volver", "List", null, new { @class="btn btn-danger"})
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

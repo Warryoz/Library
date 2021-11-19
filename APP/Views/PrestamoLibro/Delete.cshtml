@@ -1,0 +1,70 @@
+﻿@model models.ViewModels.PrestamoLibroViewModel
+
+
+<div class="row">
+    <div class=" col-md-offset-4 col-md-8">
+        <h3 class="text-danger">Zona de eliminación de renta de libros</h3>
+        <h4>¿Esta seguro que desea eliminar la renta de este libro?</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Fecha prestamo
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FechaPrestamo)
+            </dd>
+
+            <dt>
+                Fue devuelto
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FueDvuelto)
+            </dd>
+
+            <dt>
+                Observacion entrega
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ObservacionEntrega)
+            </dd>
+
+            <dt>
+                Observacion prestamo
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ObservacionPrestamo)
+            </dd>
+
+            <dt>
+               Libro
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Libro)
+            </dd>
+
+            <dt>
+                Usuario
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Usuario)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar permanentemente" class="btn btn-danger" />
+                @Html.ActionLink("Volver", "List", null, new { @class = "btn btn-success" })
+            </div>
+        }
+    </div>
+</div>

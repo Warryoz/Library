@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="@Url.Content("~/Content/img/logo.png")">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-light navbar-inverse navbar-fixed-top" style="background-color: #e3f2fd; border-color: #e3f2fd">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="@Url.Content("~/Content/img/logo.png")" width="30" height="30" alt="">
+            </a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Biblioteca", "", "", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Usuarios", "List", "Usuario")</li>
+                    <li>@Html.ActionLink("Tipo identificacion", "List", "TipoIdentificacion")</li>
+                    <li>@Html.ActionLink("Libros", "List", "Libro")</li>
+                    <li>@Html.ActionLink("Prestamo libros", "List", "PrestamoLibro")</li>
+                    <li>@Html.ActionLink("Autores", "List", "Autor")</li>
+                    <li>@Html.ActionLink("Editorial", "List", "Editorial")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; Made it  by  - Gerónimo Velasco | Junior .NET Developer</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

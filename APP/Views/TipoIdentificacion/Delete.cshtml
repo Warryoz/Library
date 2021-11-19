@@ -1,0 +1,19 @@
+﻿@model models.TipoIdentificacion
+
+<div class="row">
+    <div class=" col-md-offset-3 col-md-9">
+        <h3 class="text-danger">Zona de eliminación de tipos de identificación</h3>
+        <h4>¿Esta seguro que desea eliminar este usuario?</h4>
+        <dl class="dl-horizontal">
+            <dt class="text-center">Nombre </dt>
+            <dd>@Html.DisplayFor(model => model.NombreTipoIdentificacion)</dd>
+        </dl>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Eliminar permanentemente" class="btn btn-danger" />
+            @Html.ActionLink("Volver", "List", null, new { @class = "btn btn-success" })
+            <h6 class="text-info">Si el tipo esta asocíado a un usuario, el tipo no podra ser eliminado</h6>
+        }
+    </div>
+</div>
